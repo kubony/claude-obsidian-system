@@ -1,0 +1,39 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+
+# Node.js
+node_modules/
+dist/
+.vite/
+
+# Environment & Secrets
+.env
+*.pickle
+*.creds/
+credentials*.json
+
+# Claude Code local files
+settings.local.json
+stream.jsonl
+.activity_ids.json
+
+# Generated data (personal)
+knowledge.ttl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log

@@ -1,0 +1,105 @@
+@prefix : <http://obsidian.local/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# =============================================================================
+# 인물 중심 온톨로지 스키마 (Person-Centric Ontology)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Classes (클래스)
+# -----------------------------------------------------------------------------
+
+:Person a rdfs:Class ;
+    rdfs:label "인물"@ko, "Person"@en ;
+    rdfs:comment "인물사전에 등록된 사람"@ko .
+
+:Meeting a rdfs:Class ;
+    rdfs:label "미팅"@ko, "Meeting"@en ;
+    rdfs:comment "특정 날짜에 인물과 나눈 대화/미팅"@ko .
+
+:Project a rdfs:Class ;
+    rdfs:label "프로젝트"@ko, "Project"@en ;
+    rdfs:comment "진행 중이거나 완료된 프로젝트"@ko .
+
+:Organization a rdfs:Class ;
+    rdfs:label "조직"@ko, "Organization"@en ;
+    rdfs:comment "회사, 코호트, 그룹 등"@ko .
+
+:Topic a rdfs:Class ;
+    rdfs:label "주제"@ko, "Topic"@en ;
+    rdfs:comment "대화에서 다뤄진 주제"@ko .
+
+:Note a rdfs:Class ;
+    rdfs:label "노트"@ko, "Note"@en ;
+    rdfs:comment "옵시디언 노트 파일"@ko .
+
+# -----------------------------------------------------------------------------
+# Object Properties (관계)
+# -----------------------------------------------------------------------------
+
+:participant a rdf:Property ;
+    rdfs:label "참여자"@ko ;
+    rdfs:domain :Meeting ;
+    rdfs:range :Person ;
+    rdfs:comment "미팅에 참여한 인물"@ko .
+
+:affiliatedWith a rdf:Property ;
+    rdfs:label "소속"@ko ;
+    rdfs:domain :Person ;
+    rdfs:range :Organization ;
+    rdfs:comment "인물의 소속 조직"@ko .
+
+:involvedIn a rdf:Property ;
+    rdfs:label "참여 프로젝트"@ko ;
+    rdfs:domain :Person ;
+    rdfs:range :Project ;
+    rdfs:comment "인물이 참여한 프로젝트"@ko .
+
+:hasTopic a rdf:Property ;
+    rdfs:label "주제"@ko ;
+    rdfs:domain :Meeting ;
+    rdfs:range :Topic ;
+    rdfs:comment "미팅에서 다뤄진 주제"@ko .
+
+:mentions a rdf:Property ;
+    rdfs:label "언급"@ko ;
+    rdfs:domain :Note ;
+    rdfs:range :Person ;
+    rdfs:comment "노트에서 언급된 인물"@ko .
+
+:knows a rdf:Property ;
+    rdfs:label "아는 사이"@ko ;
+    rdfs:domain :Person ;
+    rdfs:range :Person ;
+    rdfs:comment "인물 간 관계"@ko .
+
+:relatedTo a rdf:Property ;
+    rdfs:label "관련"@ko ;
+    rdfs:comment "일반적인 연결 관계"@ko .
+
+# -----------------------------------------------------------------------------
+# Datatype Properties (속성)
+# -----------------------------------------------------------------------------
+
+:name a rdf:Property ;
+    rdfs:label "이름"@ko ;
+    rdfs:range xsd:string .
+
+:date a rdf:Property ;
+    rdfs:label "날짜"@ko ;
+    rdfs:range xsd:date .
+
+:summary a rdf:Property ;
+    rdfs:label "요약"@ko ;
+    rdfs:range xsd:string .
+
+:filePath a rdf:Property ;
+    rdfs:label "파일경로"@ko ;
+    rdfs:range xsd:string .
+
+:tag a rdf:Property ;
+    rdfs:label "태그"@ko ;
+    rdfs:range xsd:string .
