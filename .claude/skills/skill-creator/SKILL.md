@@ -81,9 +81,9 @@ Executable code (Python/Bash/etc.) for tasks that require deterministic reliabil
 
 **Python 가상환경 규칙:**
 - **별도 .venv 생성 금지** - 스킬마다 가상환경을 만들지 않음
-- **루트 .venv 공유** - 프로젝트 루트의 `/Users/inkeun/projects/obsidian/.venv` 사용
+- **루트 .venv 공유** - 프로젝트 루트의 `/path/to/vault/.venv` 사용
 - 필요한 패키지는 `requirements.txt`에 명시하고, 루트 venv에 설치
-- 스크립트 실행 패턴: `source /Users/inkeun/projects/obsidian/.venv/bin/activate && python scripts/...`
+- 스크립트 실행 패턴: `source /path/to/vault/.venv/bin/activate && python scripts/...`
 
 ##### References (`references/`)
 

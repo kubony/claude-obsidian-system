@@ -39,14 +39,14 @@ Gmail API를 활용하여 이메일을 검색하고 조회하는 스킬입니다
 5. 생성된 OAuth 클라이언트에서 **JSON 다운로드**
 6. 다운로드한 파일을 아래 경로에 저장:
    ```
-   /Users/inkeun/projects/obsidian/.creds/gmail_oauth_credentials.json
+   /path/to/vault/.creds/gmail_oauth_credentials.json
    ```
 
 ### 2. 첫 실행 시 인증
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/gmail-reader/scripts/gmail_client.py
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/gmail-reader/scripts/gmail_client.py
 ```
 
 - 브라우저가 열리고 Google 계정 로그인 요청
@@ -59,8 +59,8 @@ source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
 
 ```bash
 # Gmail 검색 쿼리로 검색
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/gmail-reader/scripts/search_emails.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/gmail-reader/scripts/search_emails.py \
     --query "subject:미팅" --max 10
 
 # 최근 7일 메일 (기본)
@@ -71,8 +71,8 @@ python .claude/skills/gmail-reader/scripts/search_emails.py --days 7
 
 ```bash
 # 최근 7일 미팅 관련 메일
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/gmail-reader/scripts/search_emails.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/gmail-reader/scripts/search_emails.py \
     --meetings --days 7
 
 # 최근 30일 미팅 메일
@@ -83,8 +83,8 @@ python .claude/skills/gmail-reader/scripts/search_emails.py --meetings --days 30
 
 ```bash
 # 특정 인물로부터 받은 메일
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/gmail-reader/scripts/search_emails.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/gmail-reader/scripts/search_emails.py \
     --from-person "홍길동"
 
 # 특정 인물과의 전체 이메일 히스토리 (주고받은 메일 모두)
@@ -96,8 +96,8 @@ python .claude/skills/gmail-reader/scripts/search_emails.py \
 
 ```bash
 # 읽지 않은 메일 확인
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/gmail-reader/scripts/get_email.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/gmail-reader/scripts/get_email.py \
     --unread --max 10
 
 # 최근 메일 확인
@@ -142,7 +142,7 @@ python .claude/skills/gmail-reader/scripts/search_emails.py --query "from:앤틀
 
 ```bash
 # 미팅 메일 검색
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
+source /path/to/vault/.venv/bin/activate && \
   python .claude/skills/gmail-reader/scripts/search_emails.py --meetings --days 14 --json > /tmp/meetings.json
 
 # 결과를 기반으로 볼트에 미팅 노트 생성 (Claude가 처리)
@@ -185,7 +185,7 @@ python .claude/skills/gmail-reader/scripts/search_emails.py \
 
 ```bash
 # 루트 venv에 설치
-source /Users/inkeun/projects/obsidian/.venv/bin/activate
+source /path/to/vault/.venv/bin/activate
 pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 
@@ -204,7 +204,7 @@ pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ### "Token has been expired or revoked" 오류
 → `gmail_token.pickle` 파일 삭제 후 재인증:
 ```bash
-rm /Users/inkeun/projects/obsidian/.creds/gmail_token.pickle
+rm /path/to/vault/.creds/gmail_token.pickle
 python .claude/skills/gmail-reader/scripts/gmail_client.py
 ```
 

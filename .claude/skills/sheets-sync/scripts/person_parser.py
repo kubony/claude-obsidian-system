@@ -351,7 +351,7 @@ def parse_person_file(filepath: Path) -> dict:
     person_id = metadata.get('id', '')
     if not person_id:
         # YAML에 id가 없으면 파일 경로 기반으로 생성
-        vault_path = Path("/Users/inkeun/projects/obsidian")
+        vault_path = Path("/path/to/vault")
         person_id = generate_id_from_path(filepath, vault_path)
 
     # 파일명에서 이름/소속/직급 추출
@@ -421,7 +421,7 @@ def parse_person_file(filepath: Path) -> dict:
 
     # 파일 경로 (상대 경로)
     try:
-        rel_path = filepath.relative_to("/Users/inkeun/projects/obsidian")
+        rel_path = filepath.relative_to("/path/to/vault")
         file_path = str(rel_path)
     except ValueError:
         file_path = str(filepath)

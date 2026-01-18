@@ -10,7 +10,7 @@ import yaml
 from pathlib import Path
 from typing import Optional, Dict
 
-VAULT_PATH = Path("/Users/inkeun/projects/obsidian")
+VAULT_PATH = Path("/path/to/vault")
 PERSON_DIR = VAULT_PATH / "04_Networking/00_인물사전"
 
 

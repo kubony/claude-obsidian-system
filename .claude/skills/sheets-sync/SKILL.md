@@ -58,16 +58,16 @@ skill_type: managed
 ## 실행 명령어
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/sheets-sync/scripts/sync_to_sheets.py
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/sheets-sync/scripts/sync_to_sheets.py
 ```
 
 ## 환경변수 (`.env`)
 
 ```bash
 # Google Sheets CRM Sync
-GOOGLE_SHEET_ID=1AsUxKQ1Zde4aanZqOjRdCP5_TmzqNn1AYLbzRokkN4o
-GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
+GOOGLE_SHEET_ID=your-google-sheet-id
+GOOGLE_CREDENTIALS_PATH=/path/to/vault/.creds/crawler-hrm.json
 ```
 
 ## 의존성
@@ -76,7 +76,7 @@ GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
 - gspread (`pip install gspread`)
 - google-auth (`pip install google-auth`)
 - PyYAML (`pip install pyyaml`)
-- manage_gapi (로컬 프로젝트: `/Users/inkeun/projects/manage_gapi`)
+- manage_gapi (로컬 프로젝트: `/path/to/user/projects/manage_gapi`)
 
 ## 주요 파일
 
@@ -123,7 +123,7 @@ GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
 
 ============================================================
 ✅ 완료: 278명의 정보를 구글시트에 동기화했습니다.
-시트 URL: https://docs.google.com/spreadsheets/d/1AsUxKQ1Zde4aanZqOjRdCP5_TmzqNn1AYLbzRokkN4o
+시트 URL: https://docs.google.com/spreadsheets/d/your-google-sheet-id
 ============================================================
 ```
 
@@ -156,7 +156,7 @@ GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
 
 - **CLAUDE.md**: 프로젝트 전체 가이드
 - **manage_gapi**: GoogleSheetAPIManager 클래스 문서
-- **Plan 파일**: `/Users/inkeun/.claude/plans/ethereal-twirling-cerf.md`
+- **Plan 파일**: `/path/to/user/.claude/plans/ethereal-twirling-cerf.md`
 
 ## 라이선스
 

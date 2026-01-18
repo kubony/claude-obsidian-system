@@ -6,8 +6,8 @@
 구글 시트 CRM으로 동기화합니다.
 
 Usage:
-    source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-      python /Users/inkeun/projects/obsidian/.claude/skills/sheets-sync/scripts/sync_to_sheets.py
+    source /path/to/vault/.venv/bin/activate && \
+      python /path/to/vault/.claude/skills/sheets-sync/scripts/sync_to_sheets.py
 """
 
 import os
@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 # 경로 설정
 SCRIPT_DIR = Path(__file__).parent
-VAULT_PATH = Path("/Users/inkeun/projects/obsidian")
+VAULT_PATH = Path("/path/to/vault")
 PERSON_DIR = VAULT_PATH / "04_Networking/00_인물사전"
 SKILL_DIR = SCRIPT_DIR.parent  # .claude/skills/sheets-sync
 

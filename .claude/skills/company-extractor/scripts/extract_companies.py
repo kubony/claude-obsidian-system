@@ -255,13 +255,13 @@ def main():
     parser.add_argument(
         "--person-dir",
         type=Path,
-        default=Path("/Users/inkeun/projects/obsidian/04_Networking/00_인물사전"),
+        default=Path("/path/to/vault/04_Networking/00_인물사전"),
         help="인물사전 폴더 경로"
     )
     parser.add_argument(
         "--company-dir",
         type=Path,
-        default=Path("/Users/inkeun/projects/obsidian/04_Networking/01_법인사전"),
+        default=Path("/path/to/vault/04_Networking/01_법인사전"),
         help="법인사전 폴더 경로"
     )
     parser.add_argument(

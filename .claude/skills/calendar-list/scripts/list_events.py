@@ -23,7 +23,7 @@ import pytz
 from google_api.calendar import GoogleCalendarAPIManager
 
 # Load environment variables
-VAULT_PATH = Path("/Users/inkeun/projects/obsidian")
+VAULT_PATH = Path("/path/to/vault")
 load_dotenv(VAULT_PATH / ".env")
 
 CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH")
@@ -234,7 +234,7 @@ Examples:
         if "403" in str(e):
             print("\n💡 캘린더 접근 권한이 없습니다.")
             print("   Google Calendar 설정에서 서비스 계정에 캘린더를 공유하세요:")
-            print(f"   이메일: hrm123@crawler-457104.iam.gserviceaccount.com")
+            print(f"   이메일: your-service-account@project.iam.gserviceaccount.com")
         sys.exit(1)
 
 

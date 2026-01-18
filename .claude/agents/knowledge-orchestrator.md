@@ -76,9 +76,9 @@ Skill 도구 호출:
 
 **실행 예시:**
 ```bash
-cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-query && \
-source /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/.venv/bin/activate && \
-python scripts/query_knowledge.py /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/knowledge.ttl \
+cd /path/to/vault/.claude/skills/ontology-query && \
+source /path/to/vault/.claude/skills/ontology-engine/.venv/bin/activate && \
+python scripts/query_knowledge.py /path/to/vault/.claude/skills/ontology-engine/knowledge.ttl \
   --preset person_meetings --param "박유빈"
 ```
 
@@ -95,9 +95,9 @@ python scripts/query_knowledge.py /Users/inkeun/projects/obsidian/.claude/skills
 
 **실행 예시:**
 ```bash
-cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-query && \
-source /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/.venv/bin/activate && \
-python scripts/query_knowledge.py /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/knowledge.ttl \
+cd /path/to/vault/.claude/skills/ontology-query && \
+source /path/to/vault/.claude/skills/ontology-engine/.venv/bin/activate && \
+python scripts/query_knowledge.py /path/to/vault/.claude/skills/ontology-engine/knowledge.ttl \
   --preset active_projects
 ```
 
@@ -125,9 +125,9 @@ python scripts/query_knowledge.py /Users/inkeun/projects/obsidian/.claude/skills
 
 ```bash
 # ontology-query 스킬 경로 설정
-QUERY_DIR=/Users/inkeun/projects/obsidian/.claude/skills/ontology-query
-TTL_FILE=/Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/knowledge.ttl
-source /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/.venv/bin/activate
+QUERY_DIR=/path/to/vault/.claude/skills/ontology-query
+TTL_FILE=/path/to/vault/.claude/skills/ontology-engine/knowledge.ttl
+source /path/to/vault/.claude/skills/ontology-engine/.venv/bin/activate
 
 # 1. 기본 정보
 python $QUERY_DIR/scripts/query_knowledge.py $TTL_FILE --query "
@@ -194,7 +194,7 @@ python $QUERY_DIR/scripts/query_knowledge.py $TTL_FILE --preset person_topics --
 
 ```bash
 # 인물사전 파일 읽기
-cat "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전/박유빈_마음AI.md"
+cat "/path/to/vault/04_Networking/00_인물사전/박유빈_마음AI.md"
 ```
 
 ## 커스텀 SPARQL 예시

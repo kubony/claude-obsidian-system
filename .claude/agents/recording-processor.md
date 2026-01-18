@@ -14,7 +14,7 @@ skills: audio-transcriber, meeting-summarizer
 
 # Recording Processor - 녹음 파일 처리 에이전트
 
-녹음 폴더(`/Users/inkeun/Documents/00_녹음파일/`) 및 외부 녹음기(`/Volumes/NO NAME/RECORD/`)의 오디오 파일 또는 STT 텍스트 파일을 처리하여 옵시디언 노트로 변환하는 에이전트입니다.
+녹음 폴더(`/path/to/recordings/`) 및 외부 녹음기(`/Volumes/NO NAME/RECORD/`)의 오디오 파일 또는 STT 텍스트 파일을 처리하여 옵시디언 노트로 변환하는 에이전트입니다.
 
 ## 역할
 
@@ -53,7 +53,7 @@ fi
 **1.2 녹음 폴더 스캔:**
 ```bash
 # 모든 녹음 파일 및 텍스트 파일 검색 (수정일 기준 정렬)
-find "/Users/inkeun/Documents/00_녹음파일/" -type f \
+find "/path/to/recordings/" -type f \
   \( -name "*.m4a" -o -name "*.WAV" -o -name "*.wav" -o -name "*.mp3" -o -name "*.txt" \) \
   -exec ls -lht {} + | head -20
 ```
@@ -141,7 +141,7 @@ AskUserQuestion 도구 호출 예시:
 Task 도구 호출 1:
 {
   "subagent_type": "single-recording-processor",
-  "prompt": "파일 처리: /Users/inkeun/Documents/00_녹음파일/R20251216-140457_미팅.WAV",
+  "prompt": "파일 처리: /path/to/recordings/R20251216-140457_미팅.WAV",
   "description": "녹음파일 1 처리"
 }
 
@@ -155,7 +155,7 @@ Task 도구 호출 2:
 Task 도구 호출 3:
 {
   "subagent_type": "single-recording-processor",
-  "prompt": "파일 처리: /Users/inkeun/Documents/00_녹음파일/2023.06.05_미팅.txt",
+  "prompt": "파일 처리: /path/to/recordings/2023.06.05_미팅.txt",
   "description": "텍스트파일 3 처리"
 }
 ```
@@ -192,7 +192,7 @@ Task 도구 호출 3:
 3. 00_Inbox/20230605_누비랩미팅_서인근_김문학.md
 
 📁 원본 파일:
-→ /Users/inkeun/Documents/00_녹음파일/처리완료/
+→ /path/to/recordings/처리완료/
 
 다음 단계:
 - vault-organizer 에이전트로 00_Inbox 정리

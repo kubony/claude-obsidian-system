@@ -17,12 +17,12 @@ recording-processor 에이전트에서 병렬 호출되어 **단일 파일**의 
 
 프롬프트로 처리할 파일 경로를 받습니다:
 ```
-파일 처리: /Users/inkeun/Documents/00_녹음파일/example.m4a
+파일 처리: /path/to/recordings/example.m4a
 ```
 
 또는 인물사전 컨텍스트와 함께:
 ```
-파일 처리: /Users/inkeun/Documents/00_녹음파일/example.m4a
+파일 처리: /path/to/recordings/example.m4a
 인물 컨텍스트:
 - 신효진: 헤드헌터, 이전 미팅 2회
 - 서인근: vault 소유자
@@ -43,20 +43,20 @@ ls -la "입력된_파일_경로"
 ### Step 2: STT 처리 (오디오 파일만)
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/audio-transcriber/scripts/transcribe.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/audio-transcriber/scripts/transcribe.py \
   "입력된_파일_경로" \
   --output "입력된_파일_경로에서_확장자를_txt로_변경" \
   --language ko
 ```
 
 **예시:**
-- 입력: `/Users/inkeun/Documents/00_녹음파일/R20251216-140457_미팅.WAV`
-- 출력: `/Users/inkeun/Documents/00_녹음파일/R20251216-140457_미팅.txt`
+- 입력: `/path/to/recordings/R20251216-140457_미팅.WAV`
+- 출력: `/path/to/recordings/R20251216-140457_미팅.txt`
 
 **녹음기 파일 처리:**
 - 입력: `/Volumes/NO NAME/RECORD/RECORD001.WAV`
-- 출력: `/Users/inkeun/Documents/00_녹음파일/RECORD001.txt`
+- 출력: `/path/to/recordings/RECORD001.txt`
 
 ### Step 3: 텍스트 파일 읽기
 
@@ -154,23 +154,23 @@ YYYYMMDD_주제_참석자.md
 
 **노트 저장:**
 ```bash
-Write 도구: "/Users/inkeun/projects/obsidian/00_Inbox/YYYYMMDD_주제_참석자.md"
+Write 도구: "/path/to/vault/00_Inbox/YYYYMMDD_주제_참석자.md"
 ```
 
 **원본 파일 이동:**
 ```bash
 # 처리완료 폴더 생성 (없으면)
-mkdir -p "/Users/inkeun/Documents/00_녹음파일/처리완료/"
+mkdir -p "/path/to/recordings/처리완료/"
 
 # [로컬] 파일인 경우:
-mv "원본_오디오_파일" "/Users/inkeun/Documents/00_녹음파일/처리완료/"
-mv "STT_결과_txt_파일" "/Users/inkeun/Documents/00_녹음파일/처리완료/"
+mv "원본_오디오_파일" "/path/to/recordings/처리완료/"
+mv "STT_결과_txt_파일" "/path/to/recordings/처리완료/"
 
 # [녹음기] 파일인 경우:
-mv "/Volumes/NO NAME/RECORD/파일명" "/Users/inkeun/Documents/00_녹음파일/처리완료/"
+mv "/Volumes/NO NAME/RECORD/파일명" "/path/to/recordings/처리완료/"
 
 # 텍스트 파일만 처리한 경우:
-mv "원본_txt_파일" "/Users/inkeun/Documents/00_녹음파일/처리완료/"
+mv "원본_txt_파일" "/path/to/recordings/처리완료/"
 ```
 
 ### Step 8: 인물사전 자동 업데이트
@@ -199,7 +199,7 @@ Task(
 ```
 ✅ 파일 처리 완료
 
-📁 원본: /Users/inkeun/Documents/00_녹음파일/R20251216-140457_미팅.WAV
+📁 원본: /path/to/recordings/R20251216-140457_미팅.WAV
 📝 노트: 00_Inbox/20251216_헤드헌터미팅_신효진_서인근.md
 📂 이동: 처리완료/
 

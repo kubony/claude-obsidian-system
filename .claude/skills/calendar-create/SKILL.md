@@ -30,23 +30,23 @@ skill_type: managed
 
 ```bash
 # 기본 이벤트 생성
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/create_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/create_event.py \
   --title "미팅" \
   --date 2025-01-15 \
   --time 14:00-15:00
 
 # 인물 지정 (인물사전에서 이메일 자동 조회)
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/create_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/create_event.py \
   --person "조쉬" \
   --title "커피챗" \
   --date 2025-01-15 \
   --time 14:00-15:00
 
 # Google Meet 자동 생성
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/create_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/create_event.py \
   --person "조쉬" \
   --title "온라인 미팅" \
   --date 2025-01-20 \
@@ -54,16 +54,16 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/cr
   --meet
 
 # 장소 지정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/create_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/create_event.py \
   --title "미팅" \
   --date 2025-01-15 \
   --time 14:00-15:00 \
   --location "강남역 스타벅스"
 
 # Dry-run (미리보기)
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/create_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/create_event.py \
   --person "조쉬" \
   --title "테스트" \
   --date 2025-01-20 \
@@ -75,26 +75,26 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/cr
 
 ```bash
 # 이벤트 ID로 수정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/update_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/update_event.py \
   --event-id abc123 \
   --title "새 제목"
 
 # 시간 변경
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/update_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/update_event.py \
   --event-id abc123 \
   --time 15:00-16:00
 
 # 검색 후 수정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/update_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/update_event.py \
   --search "조쉬 커피챗" \
   --location "판교 카페"
 
 # 이벤트 삭제
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/update_event.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/update_event.py \
   --event-id abc123 \
   --delete
 ```
@@ -102,8 +102,8 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/up
 ### 인물 정보 조회
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/person_lookup.py "조쉬"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-create/scripts/person_lookup.py "조쉬"
 ```
 
 ## CLI 옵션
@@ -144,7 +144,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/pe
 
 ```
 ✅ 인물사전에서 '조쉬 (Josh)' 찾음
-   이메일: joshproductletter@gmail.com
+   이메일: attendee@example.com
 
 ==================================================
 📅 이벤트 미리보기
@@ -152,7 +152,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/pe
 제목: 커피챗
 일시: 2025-01-15 (수) 14:00 - 15:00
 화상회의: Google Meet (자동 생성)
-참석자: joshproductletter@gmail.com
+참석자: attendee@example.com
 ==================================================
 
 ✅ 이벤트 생성 완료!
@@ -167,7 +167,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-create/scripts/pe
 `.env` 파일에 다음 변수가 필요합니다:
 
 ```bash
-GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
+GOOGLE_CREDENTIALS_PATH=/path/to/vault/.creds/crawler-hrm.json
 GOOGLE_CALENDAR_ID=primary
 ```
 
@@ -180,7 +180,7 @@ Google Calendar에서 Service Account에 **쓰기 권한** 부여:
 1. [Google Calendar](https://calendar.google.com) 접속
 2. 설정 (⚙️) → 내 캘린더의 설정 → [대상 캘린더]
 3. "특정 사용자와 공유" 섹션
-4. 사용자 추가: `hrm123@crawler-457104.iam.gserviceaccount.com`
+4. 사용자 추가: `your-service-account@project.iam.gserviceaccount.com`
 5. 권한: **"변경 및 공유 관리 권한"** (쓰기 필요!)
 
 ## 인물사전 연동

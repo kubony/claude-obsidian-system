@@ -17,7 +17,7 @@ model: haiku
 
 ## 입력
 
-미팅 노트 파일 경로 (예: `/Users/inkeun/projects/obsidian/00_Inbox/260112_류형규_리얼월드_커피챗.md`)
+미팅 노트 파일 경로 (예: `/path/to/vault/00_Inbox/260112_류형규_리얼월드_커피챗.md`)
 
 또는 최근 생성된 00_Inbox 파일 자동 감지
 
@@ -45,7 +45,7 @@ summary: 미팅 요약
 
 ```bash
 # 인물사전에서 해당 인물 파일 검색
-ls /Users/inkeun/projects/obsidian/04_Networking/00_인물사전/*{이름}*.md 2>/dev/null
+ls /path/to/vault/04_Networking/00_인물사전/*{이름}*.md 2>/dev/null
 ```
 
 ### 3. 인물사전 업데이트/생성
@@ -154,7 +154,7 @@ python3 -c "import secrets; print(f'person_{secrets.token_hex(8)}')"
 ```
 Task(
   subagent_type="recording-person-updater",
-  prompt="다음 미팅 노트에서 인물사전을 업데이트해주세요: /Users/inkeun/projects/obsidian/00_Inbox/260112_류형규_리얼월드_커피챗.md"
+  prompt="다음 미팅 노트에서 인물사전을 업데이트해주세요: /path/to/vault/00_Inbox/260112_류형규_리얼월드_커피챗.md"
 )
 ```
 

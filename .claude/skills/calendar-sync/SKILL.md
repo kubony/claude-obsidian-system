@@ -28,25 +28,25 @@ skill_type: managed
 
 ```bash
 # 오늘 일정 동기화
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync_to_person.py --today
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-sync/scripts/sync_to_person.py --today
 
 # 이번 주 일정 동기화
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync_to_person.py --week
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-sync/scripts/sync_to_person.py --week
 
 # 특정 기간 동기화
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync_to_person.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-sync/scripts/sync_to_person.py \
   --start 2025-01-01 --end 2025-01-08
 
 # Dry-run (미리보기)
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync_to_person.py --today --dry-run
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-sync/scripts/sync_to_person.py --today --dry-run
 
 # 특정 인물만 동기화
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync_to_person.py --today --person "조쉬"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-sync/scripts/sync_to_person.py --today --person "조쉬"
 ```
 
 ## CLI 옵션
@@ -95,7 +95,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync
 🔍 Dry-run 모드: 실제 변경 없음
 
 🔍 2025.01.08 10:00 조쉬님 커피챗
-   → 조쉬_ASC.md (email: joshproductletter@gmail.com)
+   → 조쉬_ASC.md (email: attendee@example.com)
 
 🔍 2025.01.08 14:00 김민주님 미팅
    → 김민주_앤틀러7기.md (name: 김민주)
@@ -115,7 +115,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📅 2025.01.08 10:00 조쉬님 커피챗
-   → 조쉬_ASC.md (email: joshproductletter@gmail.com)
+   → 조쉬_ASC.md (email: attendee@example.com)
    ✅ 동기화 완료
 
 📅 2025.01.08 14:00 김민주님 미팅
@@ -131,7 +131,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-sync/scripts/sync
 `.env` 파일에 다음 변수가 필요합니다:
 
 ```bash
-GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
+GOOGLE_CREDENTIALS_PATH=/path/to/vault/.creds/crawler-hrm.json
 GOOGLE_CALENDAR_ID=primary
 ```
 
@@ -144,7 +144,7 @@ Google Calendar에서 Service Account에 캘린더를 공유해야 합니다:
 1. [Google Calendar](https://calendar.google.com) 접속
 2. 설정 (⚙️) → 내 캘린더의 설정 → [대상 캘린더]
 3. "특정 사용자와 공유" 섹션
-4. 사용자 추가: `hrm123@crawler-457104.iam.gserviceaccount.com`
+4. 사용자 추가: `your-service-account@project.iam.gserviceaccount.com`
 5. 권한: **"모든 일정 세부정보 보기"** (읽기 권한으로 충분)
 
 ## 매칭 알고리즘

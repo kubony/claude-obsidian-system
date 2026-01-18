@@ -21,7 +21,7 @@ Google Contacts에서 내보낸 CSV 파일을 파싱하여 인물사전 파일�
 ## 연락처 파일 위치
 
 ```
-/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv
+/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv
 ```
 
 ## 실행 방법
@@ -29,20 +29,20 @@ Google Contacts에서 내보낸 CSV 파일을 파싱하여 인물사전 파일�
 ### Dry-run (미리보기)
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/google-contact-sync/scripts/update_contacts.py \
-  "/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv" \
-  "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전" \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/google-contact-sync/scripts/update_contacts.py \
+  "/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv" \
+  "/path/to/vault/04_Networking/00_인물사전" \
   --dry-run
 ```
 
 ### 실제 업데이트
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/google-contact-sync/scripts/update_contacts.py \
-  "/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv" \
-  "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/google-contact-sync/scripts/update_contacts.py \
+  "/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv" \
+  "/path/to/vault/04_Networking/00_인물사전"
 ```
 
 ## 파라미터
@@ -169,7 +169,7 @@ contact:
 
 - Python 3.8+
 - PyYAML: `pip install pyyaml`
-- 가상환경: `/Users/inkeun/projects/obsidian/.venv`
+- 가상환경: `/path/to/vault/.venv`
 
 ## 주의사항
 

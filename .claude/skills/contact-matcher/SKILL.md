@@ -21,16 +21,16 @@ Google 연락처(CSV) 또는 iCloud 연락처(VCF)와 인물사전을 분석하�
 ## 연락처 파일 위치
 
 ```
-/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv
+/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv
 ```
 
 ## 실행 방법
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/contact-matcher/scripts/analyze_contact_matching.py \
-  --contact-file "/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv" \
-  --person-dir "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전" \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/contact-matcher/scripts/analyze_contact_matching.py \
+  --contact-file "/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv" \
+  --person-dir "/path/to/vault/04_Networking/00_인물사전" \
   --min-score 7
 ```
 
@@ -97,7 +97,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/contact-matcher/scripts/an
 
 - Python 3.8+
 - PyYAML: `pip install pyyaml`
-- 가상환경: `/Users/inkeun/projects/obsidian/.venv`
+- 가상환경: `/path/to/vault/.venv`
 
 ## 제한사항
 

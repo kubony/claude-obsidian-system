@@ -57,12 +57,12 @@ GEMINI_API_KEY=your-gemini-api-key
 ```bash
 # 일괄 치환 예시
 find .claude -type f \( -name "*.md" -o -name "*.py" \) \
-  -exec sed -i '' 's|/Users/inkeun/projects/obsidian|/path/to/your/vault|g' {} \;
+  -exec sed -i '' 's|/path/to/vault|/path/to/your/vault|g' {} \;
 ```
 
 **주요 경로:**
-- `/Users/inkeun/projects/obsidian` → 볼트 루트
-- `/Users/inkeun/Documents/00_녹음파일/` → 녹음 폴더
+- `/path/to/vault` → 볼트 루트
+- `/path/to/recordings/` → 녹음 폴더
 - `.creds/` → Google API 인증 파일
 
 ## 구조
@@ -124,17 +124,20 @@ Claude Code CLI에서:
 
 ## 볼트 구조 요구사항
 
-이 시스템은 다음 폴더 구조를 가정합니다:
+이 시스템은 PARA 방법론 기반 폴더 구조를 가정합니다:
 
 ```
 00_Inbox/                # 새 파일 기본 위치
-00_A_Projects/Active/    # 진행중 프로젝트
-04_Networking/
-  └── 00_인물사전/       # 인물 파일 (*.md)
-  └── 01_법인사전/       # 회사 파일 (*.md)
-10_Resources/            # 지식 베이스
-90_Archives/             # 완료된 프로젝트
+00_Daily/                # 일일 노트
+10_Projects/Active/      # 진행중 프로젝트
+20_Areas/
+  └── 00_인물사전/       # 인물 파일 (이름_소속.md)
+  └── 01_법인사전/       # 회사 파일 (회사명.md)
+30_Resources/            # 지식 베이스
+40_Archives/             # 완료된 프로젝트
 ```
+
+**참고:** 폴더 구조는 에이전트/스킬 파일 내 경로를 수정하여 커스터마이징 가능
 
 ## 커스터마이징
 

@@ -181,7 +181,7 @@ def parse_company_file(filepath: Path) -> dict:
 
     # 파일 경로 (상대 경로)
     try:
-        rel_path = filepath.relative_to("/Users/inkeun/projects/obsidian")
+        rel_path = filepath.relative_to("/path/to/vault")
         file_path = str(rel_path)
     except ValueError:
         file_path = str(filepath)
@@ -205,7 +205,7 @@ def parse_company_file(filepath: Path) -> dict:
 
 if __name__ == "__main__":
     # 테스트 코드
-    test_dir = Path("/Users/inkeun/projects/obsidian/04_Networking/01_법인사전")
+    test_dir = Path("/path/to/vault/04_Networking/01_법인사전")
 
     if test_dir.exists():
         print("=== Company Parser 테스트 ===\n")

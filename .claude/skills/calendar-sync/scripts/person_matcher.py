@@ -10,7 +10,7 @@ import yaml
 from pathlib import Path
 from typing import Dict, List, Optional
 
-VAULT_PATH = Path("/Users/inkeun/projects/obsidian")
+VAULT_PATH = Path("/path/to/vault")
 PERSON_DIR = VAULT_PATH / "04_Networking/00_인물사전"
 
 # 직급/직책 단어 (이름 매칭에서 제외)
@@ -214,7 +214,7 @@ def main():
     test_event = {
         'summary': '조쉬님 커피챗',
         'attendees': [
-            {'email': 'joshproductletter@gmail.com'},
+            {'email': 'attendee@example.com'},
             {'email': 'test@example.com'},
         ]
     }

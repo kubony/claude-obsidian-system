@@ -25,7 +25,7 @@ from google_api.calendar import GoogleCalendarAPIManager
 from person_matcher import PersonMatcher
 
 # Load environment variables
-VAULT_PATH = Path("/Users/inkeun/projects/obsidian")
+VAULT_PATH = Path("/path/to/vault")
 load_dotenv(VAULT_PATH / ".env")
 
 CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH")

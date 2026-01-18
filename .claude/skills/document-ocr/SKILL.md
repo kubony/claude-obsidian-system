@@ -17,7 +17,7 @@ Gemini Vision API를 사용하여 PDF와 이미지에서 텍스트를 추출하�
 
 ```bash
 # 1단계: OCR 수행
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
+source /path/to/vault/.venv/bin/activate && \
   python .claude/skills/document-ocr/scripts/extract_text.py input.pdf --handwritten
 
 # 2단계: Claude에게 정리 요청
@@ -27,8 +27,8 @@ source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
 ## 사용 방법
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/document-ocr/scripts/extract_text.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/document-ocr/scripts/extract_text.py \
   <input_file> [options]
 ```
 

@@ -17,10 +17,10 @@ Obsidian 볼트의 마크다운 파일을 RDF/TTL 온톨로지로 변환합니�
 ## 실행 방법
 
 ```bash
-cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-sync && \
-source /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/.venv/bin/activate && \
-python scripts/vault_to_ttl.py /Users/inkeun/projects/obsidian \
-  --output /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/knowledge.ttl
+cd /path/to/vault/.claude/skills/ontology-sync && \
+source /path/to/vault/.claude/skills/ontology-engine/.venv/bin/activate && \
+python scripts/vault_to_ttl.py /path/to/vault \
+  --output /path/to/vault/.claude/skills/ontology-engine/knowledge.ttl
 ```
 
 ## 출력

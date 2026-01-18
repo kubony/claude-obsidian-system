@@ -44,7 +44,7 @@ def get_token_file() -> str:
     """Get the token file path."""
     return os.getenv(
         'GOOGLE_KEEP_TOKEN_FILE',
-        '/Users/inkeun/projects/obsidian/.creds/keep_master_token.json'
+        '/path/to/vault/.creds/keep_master_token.json'
     )
 
 
@@ -251,7 +251,7 @@ def main():
     parser.add_argument('--fetch-all', action='store_true', help='모든 메모 가져오기')
     parser.add_argument('--search', type=str, help='메모 검색')
     parser.add_argument('--output-dir', type=str,
-                        default='/Users/inkeun/projects/obsidian/00_Inbox',
+                        default='/path/to/vault/00_Inbox',
                         help='출력 디렉토리')
     parser.add_argument('--include-archived', action='store_true', help='보관된 메모 포함')
     parser.add_argument('--include-trashed', action='store_true', help='휴지통 메모 포함')

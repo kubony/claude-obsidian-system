@@ -29,33 +29,33 @@ skill_type: managed
 
 ```bash
 # 오늘 일정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py --today
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py --today
 
 # 이번 주 일정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py --week
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py --week
 
 # 이번 달 일정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py --month
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py --month
 
 # 특정 기간 일정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py \
   --start 2025-01-01 --end 2025-01-31
 
 # 특정 인물 관련 일정
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py --person "조쉬"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py --person "조쉬"
 
 # 검색어로 일정 찾기
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py --query "커피챗"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py --query "커피챗"
 
 # JSON 출력 (다른 스킬에서 사용)
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list_events.py --today --json
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/calendar-list/scripts/list_events.py --today --json
 ```
 
 ## CLI 옵션
@@ -92,7 +92,7 @@ python /Users/inkeun/projects/obsidian/.claude/skills/calendar-list/scripts/list
 `.env` 파일에 다음 변수가 필요합니다:
 
 ```bash
-GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
+GOOGLE_CREDENTIALS_PATH=/path/to/vault/.creds/crawler-hrm.json
 GOOGLE_CALENDAR_ID=primary  # 또는 특정 캘린더 ID
 ```
 
@@ -105,7 +105,7 @@ Google Calendar에서 Service Account에 캘린더를 공유해야 합니다:
 1. [Google Calendar](https://calendar.google.com) 접속
 2. 설정 (⚙️) → 내 캘린더의 설정 → [대상 캘린더]
 3. "특정 사용자와 공유" 섹션
-4. 사용자 추가: `hrm123@crawler-457104.iam.gserviceaccount.com`
+4. 사용자 추가: `your-service-account@project.iam.gserviceaccount.com`
 5. 권한: **"모든 일정 세부정보 보기"** (읽기 전용으로 충분)
 
 ## 에러 처리

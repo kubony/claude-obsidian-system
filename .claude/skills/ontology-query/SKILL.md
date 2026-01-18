@@ -16,9 +16,9 @@ knowledge.ttl 파일에 SPARQL 질의를 수행합니다.
 ## 실행 방법
 
 ```bash
-cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-query && \
-source /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/.venv/bin/activate && \
-python scripts/query_knowledge.py /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine/knowledge.ttl \
+cd /path/to/vault/.claude/skills/ontology-query && \
+source /path/to/vault/.claude/skills/ontology-engine/.venv/bin/activate && \
+python scripts/query_knowledge.py /path/to/vault/.claude/skills/ontology-engine/knowledge.ttl \
   --preset <preset_name> --param "<parameter>"
 ```
 

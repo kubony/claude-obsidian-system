@@ -31,8 +31,8 @@ skills: company-extractor, company-sheets-sync
 **company-extractor 스킬 실행:**
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/company-extractor/scripts/extract_companies.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/company-extractor/scripts/extract_companies.py \
     --min-count 2 \
     --format json
 ```
@@ -102,8 +102,8 @@ Task(
 **company-sheets-sync 스킬 실행:**
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/company-sheets-sync/scripts/sync_companies.py
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/company-sheets-sync/scripts/sync_companies.py
 ```
 
 **결과 확인:**
@@ -208,7 +208,7 @@ description: AI 솔로프레너들의 학습 및 네트워킹 커뮤니티.
 
 | 항목 | 경로 |
 |------|------|
-| 인물사전 | `/Users/inkeun/projects/obsidian/04_Networking/00_인물사전/` |
-| 법인사전 | `/Users/inkeun/projects/obsidian/04_Networking/01_법인사전/` |
+| 인물사전 | `/path/to/vault/04_Networking/00_인물사전/` |
+| 법인사전 | `/path/to/vault/04_Networking/01_법인사전/` |
 | company-extractor | `.claude/skills/company-extractor/scripts/extract_companies.py` |
 | company-sheets-sync | `.claude/skills/company-sheets-sync/scripts/sync_companies.py` |

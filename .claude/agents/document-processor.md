@@ -38,13 +38,13 @@ PDF 파일, 이미지 파일(수기 메모, 스캔 문서 등)을 처리하여 �
 **1.2 폴더 스캔이 필요한 경우:**
 ```bash
 # 다운로드 폴더에서 최근 PDF/이미지 파일 검색
-find "/Users/inkeun/Downloads/" -type f \
+find "/path/to/user/Downloads/" -type f \
   \( -name "*.pdf" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.heic" \) \
   -mtime -7 \
   -exec ls -lht {} + | head -20
 
 # 문서 폴더에서도 검색
-find "/Users/inkeun/Documents/" -type f \
+find "/path/to/user/Documents/" -type f \
   \( -name "*.pdf" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.heic" \) \
   -mtime -7 \
   -exec ls -lht {} + | head -20
@@ -115,10 +115,10 @@ document-ocr 스킬 사용:
 
 ```bash
 # venv 활성화 후 OCR 스크립트 실행
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/document-ocr/scripts/extract_text.py \
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/document-ocr/scripts/extract_text.py \
   "/path/to/document.pdf" \
-  --output "/Users/inkeun/projects/obsidian/00_Inbox/temp_ocr_result.md" \
+  --output "/path/to/vault/00_Inbox/temp_ocr_result.md" \
   --handwritten  # 수기 메모인 경우만
 ```
 
@@ -142,7 +142,7 @@ source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
 **4.1 OCR 결과 읽기:**
 ```
 Read 도구로 OCR 결과 파일 읽기:
-"/Users/inkeun/projects/obsidian/00_Inbox/temp_ocr_result.md"
+"/path/to/vault/00_Inbox/temp_ocr_result.md"
 ```
 
 **4.2 참석자 인물사전 조회 (회의록인 경우):**
@@ -236,20 +236,20 @@ YYYYMMDD_주제_맥락.md
 ```bash
 # 00_Inbox에 최종 노트 저장
 Write 도구 사용:
-"/Users/inkeun/projects/obsidian/00_Inbox/20200521_ALM_대표이사_회의.md"
+"/path/to/vault/00_Inbox/20200521_ALM_대표이사_회의.md"
 ```
 
 2. **임시 OCR 파일 정리:**
 ```bash
 # temp_ocr_result.md 삭제 (최종 노트에 통합됨)
-rm "/Users/inkeun/projects/obsidian/00_Inbox/temp_ocr_result.md"
+rm "/path/to/vault/00_Inbox/temp_ocr_result.md"
 ```
 
 3. **원본 파일 이동 (선택적):**
 ```bash
 # 사용자가 원하는 경우 처리완료 폴더로 이동
-mkdir -p "/Users/inkeun/Documents/처리완료_문서/"
-mv "/path/to/original.pdf" "/Users/inkeun/Documents/처리완료_문서/"
+mkdir -p "/path/to/user/Documents/처리완료_문서/"
+mv "/path/to/original.pdf" "/path/to/user/Documents/처리완료_문서/"
 ```
 
 ### Phase 7: 완료 보고
@@ -304,6 +304,6 @@ mv "/path/to/original.pdf" "/Users/inkeun/Documents/처리완료_문서/"
 
 ## 환경 요구사항
 
-- Python venv: `/Users/inkeun/projects/obsidian/.venv/`
+- Python venv: `/path/to/vault/.venv/`
 - API 키: `GEMINI_API_KEY_FOR_AGENT` (`.env` 파일)
 - poppler: `brew install poppler` (PDF 처리용)

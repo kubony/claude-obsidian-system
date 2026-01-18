@@ -21,8 +21,8 @@ def generate_id_from_path(filepath: Path, vault_path: Path) -> str:
         str: "person_" prefix + 16자 hex hash
 
     Example:
-        >>> filepath = Path("/Users/inkeun/projects/obsidian/04_Networking/00_인물사전/김태훈_앤틀러7기.md")
-        >>> vault_path = Path("/Users/inkeun/projects/obsidian")
+        >>> filepath = Path("/path/to/vault/04_Networking/00_인물사전/김태훈_앤틀러7기.md")
+        >>> vault_path = Path("/path/to/vault")
         >>> generate_id_from_path(filepath, vault_path)
         'person_a1b2c3d4e5f6g7h8'
 
@@ -107,7 +107,7 @@ def generate_collision_free_id(base_id: str, existing_ids: set[str]) -> str:
 
 if __name__ == "__main__":
     # 테스트 코드
-    vault = Path("/Users/inkeun/projects/obsidian")
+    vault = Path("/path/to/vault")
     test_file = vault / "04_Networking/00_인물사전/김태훈_앤틀러7기.md"
 
     print("=== ID Generator 테스트 ===")

@@ -23,7 +23,7 @@ from pathlib import Path
 from id_generator import generate_id_from_path
 
 # 경로 설정
-VAULT_PATH = Path("/Users/inkeun/projects/obsidian")
+VAULT_PATH = Path("/path/to/vault")
 PERSON_DIR = VAULT_PATH / "04_Networking/00_인물사전"
 
 

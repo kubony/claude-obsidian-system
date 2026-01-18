@@ -34,22 +34,22 @@ Google Keep API를 통해 메모를 가져와서 Obsidian 마크다운 파일로
 
 ```bash
 # 메모 목록 조회
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/keep-sync/scripts/fetch_notes.py --list
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/keep-sync/scripts/fetch_notes.py --list
 
 # 모든 메모 가져오기
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/keep-sync/scripts/fetch_notes.py --fetch-all
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/keep-sync/scripts/fetch_notes.py --fetch-all
 
 # 특정 메모 가져오기
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/keep-sync/scripts/fetch_notes.py --note-id "notes/xxxxx"
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/keep-sync/scripts/fetch_notes.py --note-id "notes/xxxxx"
 ```
 
 ## 환경변수 (`.env`)
 
 ```bash
-GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
+GOOGLE_CREDENTIALS_PATH=/path/to/vault/.creds/crawler-hrm.json
 ```
 
 ## 의존성

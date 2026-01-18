@@ -20,8 +20,8 @@
 ## 실행 방법
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/company-extractor/scripts/extract_companies.py
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/company-extractor/scripts/extract_companies.py
 ```
 
 ### 옵션

@@ -19,7 +19,7 @@ SCOPES = [
 
 # 기본 경로 설정
 SKILL_DIR = Path(__file__).parent.parent
-CREDS_DIR = Path(os.getenv('GMAIL_CREDS_DIR', '/Users/inkeun/projects/obsidian/.creds'))
+CREDS_DIR = Path(os.getenv('GMAIL_CREDS_DIR', '/path/to/vault/.creds'))
 CREDENTIALS_FILE = CREDS_DIR / 'oauth_client.json'
 TOKEN_FILE = CREDS_DIR / 'gmail_send_token.pickle'  # 발송용 별도 토큰
 

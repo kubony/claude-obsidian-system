@@ -11,11 +11,11 @@ Obsidian 인물사전 및 프로젝트를 RDF 온톨로지로 변환하고 SPARQ
 
 **중요:** 시스템 Python에 직접 설치 금지. 루트 `.venv` 사용.
 
-**경로:** `/Users/inkeun/projects/obsidian/.venv`
+**경로:** `/path/to/vault/.venv`
 
 모든 스크립트 실행 시 아래 패턴 사용:
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine && python scripts/...
+source /path/to/vault/.venv/bin/activate && cd /path/to/vault/.claude/skills/ontology-engine && python scripts/...
 ```
 
 ## 워크플로우
@@ -28,7 +28,7 @@ source /Users/inkeun/projects/obsidian/.venv/bin/activate && cd /Users/inkeun/pr
 ## 1. 변환 (볼트 → TTL)
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine && python scripts/vault_to_ttl.py /Users/inkeun/projects/obsidian --output knowledge.ttl
+source /path/to/vault/.venv/bin/activate && cd /path/to/vault/.claude/skills/ontology-engine && python scripts/vault_to_ttl.py /path/to/vault --output knowledge.ttl
 ```
 
 **변환 대상:**
@@ -51,7 +51,7 @@ source /Users/inkeun/projects/obsidian/.venv/bin/activate && cd /Users/inkeun/pr
 **모든 명령은 루트 venv 활성화 후 스킬 디렉토리에서 실행:**
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && cd /Users/inkeun/projects/obsidian/.claude/skills/ontology-engine
+source /path/to/vault/.venv/bin/activate && cd /path/to/vault/.claude/skills/ontology-engine
 
 # 모든 인물
 python scripts/query_knowledge.py knowledge.ttl --preset all_persons

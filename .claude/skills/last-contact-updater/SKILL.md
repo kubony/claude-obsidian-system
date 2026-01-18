@@ -24,26 +24,26 @@ description: 인물사전 파일 본문에서 가장 최근 미팅 날짜를 추
 ### Dry-run (미리보기)
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
-  "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전" \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
+  "/path/to/vault/04_Networking/00_인물사전" \
   --dry-run
 ```
 
 ### 실제 업데이트
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
-  "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
+  "/path/to/vault/04_Networking/00_인물사전"
 ```
 
 ### 일부 파일만 처리
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
-  "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전" \
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
+  "/path/to/vault/04_Networking/00_인물사전" \
   --limit 50
 ```
 
@@ -142,7 +142,7 @@ last_contact: 2024-11-21  # 본문에서 추출된 최근 날짜
 
 - Python 3.8+
 - PyYAML: `pip install pyyaml`
-- 가상환경: `/Users/inkeun/projects/obsidian/.venv`
+- 가상환경: `/path/to/vault/.venv`
 
 ## 주의사항
 

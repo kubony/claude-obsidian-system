@@ -104,12 +104,12 @@ Google Contacts CSV 파일이 있으면 연락처 정보를 자동으로 업데�
 
 ```bash
 # CSV 파일 확인
-CSV_PATH="/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv"
+CSV_PATH="/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv"
 if [ -f "$CSV_PATH" ]; then
-  source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/google-contact-sync/scripts/update_contacts.py \
+  source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/google-contact-sync/scripts/update_contacts.py \
     "$CSV_PATH" \
-    "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전"
+    "/path/to/vault/04_Networking/00_인물사전"
 fi
 ```
 
@@ -124,9 +124,9 @@ fi
 본문에서 가장 최근 미팅 날짜를 추출하여 `last_contact` 필드 업데이트:
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-python /Users/inkeun/projects/obsidian/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
-  "/Users/inkeun/projects/obsidian/04_Networking/00_인물사전"
+source /path/to/vault/.venv/bin/activate && \
+python /path/to/vault/.claude/skills/last-contact-updater/scripts/update_last_contact.py \
+  "/path/to/vault/04_Networking/00_인물사전"
 ```
 
 **추출 패턴**: `## YYYY.MM.DD`, `## YYYY-MM-DD`, `## YYMMDD` 형식의 헤딩에서 가장 최근 날짜 선택
@@ -147,8 +147,8 @@ python /Users/inkeun/projects/obsidian/.claude/skills/last-contact-updater/scrip
 인물사전 업데이트가 완료되면 자동으로 구글 시트에 동기화:
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/sheets-sync/scripts/sync_to_sheets.py
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/sheets-sync/scripts/sync_to_sheets.py
 ```
 
 또는 Skill 도구 사용:
@@ -165,5 +165,5 @@ Skill(skill="sheets-sync")
 3. **소속 변경**: 이직 등으로 소속이 바뀐 경우 파일명 변경 고려
 4. **개인정보 주의**: 연락처 등 민감 정보는 본인 동의 하에만 기록
 5. **작업 순서 준수**: 인물사전 업데이트 → 연락처/미팅일 동기화 → sheets-sync 순서로 실행
-6. **CSV 파일 경로**: Google 연락처 동기화는 `/Users/inkeun/projects/obsidian/.docs/contacts-google-kubony@gmail.com_20260104.csv` 파일이 있을 때만 실행
+6. **CSV 파일 경로**: Google 연락처 동기화는 `/path/to/vault/.docs/contacts-google-your-email@example.com_20260104.csv` 파일이 있을 때만 실행
 7. **날짜 형식**: 마지막 미팅일 추출을 위해 본문에 `## YYYY.MM.DD` 형식의 헤딩 필요

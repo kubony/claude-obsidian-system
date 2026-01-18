@@ -18,8 +18,8 @@
 ## 실행 방법
 
 ```bash
-source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
-  python /Users/inkeun/projects/obsidian/.claude/skills/company-sheets-sync/scripts/sync_companies.py
+source /path/to/vault/.venv/bin/activate && \
+  python /path/to/vault/.claude/skills/company-sheets-sync/scripts/sync_companies.py
 ```
 
 ## 시트 구조 (13개 필드)
@@ -56,8 +56,8 @@ source /Users/inkeun/projects/obsidian/.venv/bin/activate && \
 `.env` 파일에 설정 필요:
 
 ```bash
-GOOGLE_SHEET_ID=1AsUxKQ1Zde4aanZqOjRdCP5_TmzqNn1AYLbzRokkN4o
-GOOGLE_CREDENTIALS_PATH=/Users/inkeun/projects/obsidian/.creds/crawler-hrm.json
+GOOGLE_SHEET_ID=your-google-sheet-id
+GOOGLE_CREDENTIALS_PATH=/path/to/vault/.creds/crawler-hrm.json
 ```
 
 ## 의존성
